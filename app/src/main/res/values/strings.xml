@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">UNCOVID</string>
+    <string name="get_started">GET STARTED</string>
+    <string name="register">REGISTER</string>
+    <string name="login">LOGIN</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_out">Sign out</string>
+    <string name="profile">Profile</string>
+    <string name="history">History</string>
+    <string name="reminder">Reminder</string>
+    <string name="faq">FAQ</string>
+    <string name="scanner">Scanner</string>
+    <string name="hotspots">Hotspots</string>
+    <string name="location_list">Location List</string>
+    <string name="location_detail">Location Detail</string>
+    <string name="health_reminder">Health Reminder</string>
+    <string name="common_problems">Common Problems</string>
+    <string name="post">Post</string>
+    <string name="confirm">Confirm</string>
+    <string name="add_my_answer">Add My Answer</string>
 </resources>
