@@ -7,13 +7,12 @@ import com.example.uncovid.fragments.AsksFragment
 import com.example.uncovid.fragments.HomeFragment
 import com.example.uncovid.fragments.ProfileFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        val navView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
         val homeFragment = HomeFragment()
         val asksFragment = AsksFragment()
@@ -21,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         makeCurrentFragment(homeFragment)
 
-        navView.setOnNavigationItemSelectedListener {
+        bottom_navigation.setOnNavigationItemSelectedListener {
             when (it.itemId){
                 R.id.ic_home -> makeCurrentFragment(homeFragment)
                 R.id.ic_question_answer -> makeCurrentFragment(asksFragment)
