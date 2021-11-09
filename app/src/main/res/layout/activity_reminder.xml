@@ -38,6 +38,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
+        android:outlineAmbientShadowColor="@color/background_2"
+        android:outlineSpotShadowColor="@color/background_2"
         app:cardCornerRadius="23dp"
         app:cardElevation="20dp"
         app:contentPaddingBottom="40dp"
@@ -144,6 +146,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="60dp"
+        android:outlineAmbientShadowColor="@color/background_2"
+        android:outlineSpotShadowColor="@color/background_2"
         app:cardCornerRadius="23dp"
         app:cardElevation="20dp"
         app:contentPaddingBottom="40dp"
@@ -165,7 +169,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView23"
+            android:id="@+id/knowCorBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
@@ -183,7 +187,7 @@
             app:srcCompat="@mipmap/coronavirus" />
 
         <TextView
-            android:id="@+id/textView24"
+            android:id="@+id/knowAvoidBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
@@ -208,7 +212,7 @@
             app:srcCompat="@mipmap/treat" />
 
         <TextView
-            android:id="@+id/textView25"
+            android:id="@+id/knowTreatBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"

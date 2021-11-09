@@ -13,6 +13,7 @@
         <entry key="app/src/main/res/layout/activity_intro.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_reminder.xml" value="0.268018018018018" />
+        <entry key="app/src/main/res/layout/activity_reminder_detail.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_asks.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_history.xml" value="0.14504504504504503" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.335" />
