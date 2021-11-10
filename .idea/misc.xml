@@ -9,6 +9,8 @@
         <entry key="app/src/main/res/drawable/ic_home_stroke.xml" value="0.17962962962962964" />
         <entry key="app/src/main/res/drawable/profile_selector.xml" value="0.17962962962962964" />
         <entry key="app/src/main/res/drawable/question_answer_selector.xml" value="0.17962962962962964" />
+        <entry key="app/src/main/res/drawable/searchbox.xml" value="0.281981981981982" />
+        <entry key="app/src/main/res/drawable/searchboxbackground.xml" value="0.281981981981982" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.26856884057971014" />
         <entry key="app/src/main/res/layout/activity_intro.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
@@ -19,6 +21,8 @@
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_reminder.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/question_card_layout.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/question_list_item.xml" value="0.268018018018018" />
         <entry key="app/src/main/res/menu/nav_menu.xml" value="0.3098958333333333" />
       </map>
     </option>

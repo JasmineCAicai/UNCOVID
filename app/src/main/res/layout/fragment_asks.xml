@@ -1,20 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.AsksFragment">
+    android:background="@color/background_1"
+    tools:context=".fragments.AsksFragment" >
 
-    <RelativeLayout
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#00FFFFFF"
+        android:src="@mipmap/back_1" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="35dp"
+        android:fontFamily="@font/amiko"
+        android:text="@string/common_problems"
+        android:textColor="@color/text_1"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="70dp"
+        android:maxWidth="300dp"
+        android:text="Frequently asked questions and answers on health and disease about Covid-19."
+        android:textColor="@color/text_5" />
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:outlineAmbientShadowColor="@color/background_4"
+        android:outlineSpotShadowColor="@color/background_4"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="10dp"
+        app:contentPaddingBottom="100dp"
+        app:contentPaddingTop="20dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="Question and Answer" />
+        <SearchView
+            android:id="@+id/searchBox"
+            android:layout_width="330dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/searchbox"
+            android:outlineAmbientShadowColor="@color/background_2"
+            android:outlineProvider="paddedBounds"
+            android:outlineSpotShadowColor="@color/background_2" />
 
-    </RelativeLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+    </androidx.cardview.widget.CardView>
 </FrameLayout>
