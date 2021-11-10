@@ -4,6 +4,76 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_1"
     tools:context=".AddAnswerActivity">
 
+    <ImageButton
+        android:id="@+id/backAddAnsBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/back_1" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="700dp"
+        android:layout_marginTop="15dp"
+        app:cardCornerRadius="30dp"
+        app:contentPaddingLeft="30dp"
+        app:contentPaddingRight="30dp"
+        app:contentPaddingTop="55dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backAddAnsBtn">
+
+        <TextView
+            android:id="@+id/answerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/amiko"
+            android:text="What is COVID-19?"
+            android:textColor="@color/text_1"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/answerDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:fontFamily="@font/amiko"
+            android:text="Jan 1, 2021"
+            android:textColor="@color/text_5"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:fontFamily="@font/amiko"
+            android:lineSpacingExtra="10sp"
+            android:text="There is no answer."
+            android:textColor="@color/text_5"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/addAnsBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="200dp"
+            android:fontFamily="sans-serif-medium"
+            android:shadowRadius="6"
+            android:text="@string/add_my_answer"
+            android:textAllCaps="false"
+            android:textColor="@color/text_6"
+            android:textSize="16sp"
+            app:cornerRadius="17dp" />
+
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,7 +12,7 @@
         <entry key="app/src/main/res/drawable/question_list_card.xml" value="0.15900900900900902" />
         <entry key="app/src/main/res/drawable/searchbox.xml" value="0.281981981981982" />
         <entry key="app/src/main/res/drawable/searchboxbackground.xml" value="0.281981981981982" />
-        <entry key="app/src/main/res/layout/activity_add_answer.xml" value="0.14504504504504503" />
+        <entry key="app/src/main/res/layout/activity_add_answer.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.26856884057971014" />
         <entry key="app/src/main/res/layout/activity_intro.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
