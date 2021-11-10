@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UNCOVID">
         <activity
+            android:name=".AddAnswerActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ViewAnswerActivity"
+            android:exported="true" />
+        <activity
             android:name=".ReminderDetailActivity"
             android:exported="true" />
         <activity

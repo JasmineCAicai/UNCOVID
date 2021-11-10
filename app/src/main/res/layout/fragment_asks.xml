@@ -31,27 +31,21 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="700dp"
         android:layout_marginTop="140dp"
         android:background="@drawable/question_list_card"
         android:outlineAmbientShadowColor="@color/background_4"
         android:outlineSpotShadowColor="@color/background_4"
+        app:cardCornerRadius="30dp"
         app:cardElevation="10dp"
-        app:contentPaddingTop="10dp">
-
-        <View
-            android:id="@+id/divider2"
-            android:layout_width="50dp"
-            android:layout_height="2dp"
-            android:layout_gravity="center_horizontal"
-            android:background="?android:attr/listDivider" />
+        app:contentPaddingBottom="160dp"
+        app:contentPaddingTop="20dp">
 
         <SearchView
             android:id="@+id/searchBox"
             android:layout_width="330dp"
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
             android:background="@drawable/searchbox"
             android:outlineAmbientShadowColor="@color/background_2"
             android:outlineProvider="paddedBounds"
@@ -61,7 +55,7 @@
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="90dp" />
+            android:layout_marginTop="80dp" />
 
     </androidx.cardview.widget.CardView>
 </FrameLayout>
