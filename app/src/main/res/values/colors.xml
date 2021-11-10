@@ -16,6 +16,8 @@
 
     <color name="btn_border">#DDDDDD</color>
 
+    <color name="question_card_border">#EAEAEA</color>
+
     <color name="text_1">#262424</color>
     <color name="text_2">#FFFFFF</color>
     <color name="text_3">#56C596</color>
