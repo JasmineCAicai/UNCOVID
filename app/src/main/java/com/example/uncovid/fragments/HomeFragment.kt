@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import com.example.uncovid.MainActivity
 import com.example.uncovid.R
 import com.example.uncovid.ReminderActivity
+import com.example.uncovid.ReminderDetailActivity
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
@@ -51,6 +52,11 @@ class HomeFragment : Fragment() {
         }
         faqHomeBtn.setOnClickListener {
             (activity as MainActivity?)!!.makeCurrentFragment(AsksFragment())
+        }
+        homeCard1.setOnClickListener {
+            val intent = Intent(activity, ReminderDetailActivity::class.java)
+            intent.putExtra("option", 2)
+            startActivity(intent)
         }
     }
 
