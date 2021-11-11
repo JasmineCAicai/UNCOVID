@@ -23,6 +23,8 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     private var images = intArrayOf(R.mipmap.circle, R.mipmap.circle, R.mipmap.circle,
         R.mipmap.circle, R.mipmap.circle, R.mipmap.circle, R.mipmap.circle, R.mipmap.circle)
 
+    private var answered = booleanArrayOf(true, false, false, false, false, false, false, false)
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerAdapter.ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.question_card_layout, parent, false)
         return ViewHolder(v)
@@ -49,8 +51,14 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
                 Toast.makeText(itemView.context, "you clicked on ${titles[position]}", Toast.LENGTH_LONG).show()
 
-                val intent = Intent(it.context, ViewAnswerActivity::class.java)
-                it.context.startActivity(intent)
+                if (answered[position]) {
+                    val intent = Intent(it.context, ViewAnswerActivity::class.java)
+                    it.context.startActivity(intent)
+                }
+                else {
+                    val intent = Intent(it.context, AddAnswerActivity::class.java)
+                    it.context.startActivity(intent)
+                }
             }
         }
     }

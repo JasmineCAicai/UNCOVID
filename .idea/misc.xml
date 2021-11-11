@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/answer_input_box.xml" value="0.15900900900900902" />
         <entry key="app/src/main/res/drawable/color_selector.xml" value="0.15900900900900902" />
         <entry key="app/src/main/res/drawable/home_selector.xml" value="0.17962962962962964" />
         <entry key="app/src/main/res/drawable/ic_home_colored.xml" value="0.17962962962962964" />
