@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/background_1"
+    tools:context=".ReminderDetailActivity">
+
+    <ImageButton
+        android:id="@+id/remBack2Btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/back_1" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="35dp"
+        android:fontFamily="@font/amiko"
+        android:text="@string/health_reminder"
+        android:textColor="@color/text_1"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/remBack2Btn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/needToKnowDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:outlineAmbientShadowColor="@color/background_2"
+        android:outlineSpotShadowColor="@color/background_2"
+        app:cardCornerRadius="23dp"
+        app:cardElevation="15dp"
+        app:contentPaddingBottom="45dp"
+        app:contentPaddingLeft="30dp"
+        app:contentPaddingRight="30dp"
+        app:contentPaddingTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView26">
+
+        <TextView
+            android:id="@+id/remDetailTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/amiko"
+            android:text="Coronavirus"
+            android:textColor="@color/text_1"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/remDetText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:fontFamily="@font/amiko"
+            android:lineSpacingExtra="10sp"
+            android:maxWidth="270dp"
+            android:text="Coronavirus disease (COVID-19) is an infectious disease caused by the SARS-CoV-2 virus. \nOlder people and those with underlying medical conditions like cardiovascular disease, diabetes, chronic respiratory disease, or cancer are more likely to develop serious illness. Anyone can get sick with COVID-19 and become seriously ill or die at any age.  "
+            android:textColor="@color/text_5"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/remDetIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="8dp"
+            app:srcCompat="@mipmap/coronavirus" />
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
