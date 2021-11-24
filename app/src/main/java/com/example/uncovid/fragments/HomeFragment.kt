@@ -54,6 +54,10 @@ class HomeFragment : Fragment() {
             val intent = Intent (activity, ScannerActivity::class.java)
             activity?.startActivity(intent)
         }
+        historyHomeBtn.setOnClickListener {
+            val intent = Intent (activity, LocationListActivity::class.java)
+            activity?.startActivity(intent)
+        }
         none.setOnClickListener {
             val intent = Intent (activity, LocationDetailActivity::class.java)
             activity?.startActivity(intent)
