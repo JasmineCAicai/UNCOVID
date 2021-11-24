@@ -6,10 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.uncovid.MainActivity
-import com.example.uncovid.R
-import com.example.uncovid.ReminderActivity
-import com.example.uncovid.ReminderDetailActivity
+import com.example.uncovid.*
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
@@ -52,6 +49,14 @@ class HomeFragment : Fragment() {
         }
         faqHomeBtn.setOnClickListener {
             (activity as MainActivity?)!!.makeCurrentFragment(AsksFragment())
+        }
+        scannerHomeBtn.setOnClickListener {
+            val intent = Intent (activity, ScannerActivity::class.java)
+            activity?.startActivity(intent)
+        }
+        none.setOnClickListener {
+            val intent = Intent (activity, LocationDetailActivity::class.java)
+            activity?.startActivity(intent)
         }
         homeCard1.setOnClickListener {
             val intent = Intent(activity, ReminderDetailActivity::class.java)
