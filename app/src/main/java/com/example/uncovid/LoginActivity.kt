@@ -3,20 +3,19 @@ package com.example.uncovid
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_intro.*
+import kotlinx.android.synthetic.main.activity_login.*
 
-class IntroActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_intro)
+        setContentView(R.layout.activity_login)
 
-        startBtn.setOnClickListener {
+        tbtnLogin.setOnClickListener{
             val intent = Intent(this, SignupActivity::class.java)
             startActivity(intent)
         }
-
-        LoginBtn.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
+        btnSignup.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
     }
