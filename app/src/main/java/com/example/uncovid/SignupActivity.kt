@@ -4,8 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.uncovid.DB.ReminderDBHelper
-import com.example.uncovid.DB.UserDBHelper
+import com.example.uncovid.DB.DBHelper
 import com.example.uncovid.entity.Reminder
 import com.example.uncovid.entity.User
 import kotlinx.android.synthetic.main.activity_signup.*
@@ -13,8 +12,7 @@ import kotlin.random.Random
 
 class SignupActivity : AppCompatActivity() {
 
-    lateinit var userDbHelper: UserDBHelper
-    lateinit var reminderDBHelper: ReminderDBHelper
+    lateinit var dbHelper: DBHelper
 
     private var names = arrayOf("Rose", "Jasmine", "Bob", "Eric", "Windy", "Mary")
 
@@ -22,8 +20,7 @@ class SignupActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
 
-        userDbHelper = UserDBHelper(this)
-        reminderDBHelper = ReminderDBHelper(this)
+        dbHelper = DBHelper(this)
 
         tbtnSignup.setOnClickListener{
             val intent = Intent(this, LoginActivity::class.java)
@@ -56,7 +53,7 @@ class SignupActivity : AppCompatActivity() {
             return
         }
 
-        if (userDbHelper.checkDuplicate(phoneNo)) {
+        if (dbHelper.checkDuplicate(phoneNo)) {
             phoneNum_2.error = "Phone number was registered!"
             phoneNum_2.requestFocus()
             return
@@ -70,13 +67,13 @@ class SignupActivity : AppCompatActivity() {
 
         var user = User(id, phoneNo, pwd, names[Random.nextInt(0, 5)])
 
-        userDbHelper.insertUserData(user)
+        dbHelper.insertUserData(user)
         return
     }
 
     private fun initReminder() {
         var reminder = Reminder(phoneNum_2.text.toString(), 0, 0, 0)
-        reminderDBHelper.insertReminderData(reminder)
+        dbHelper.insertReminderData(reminder)
         return
     }
 }
