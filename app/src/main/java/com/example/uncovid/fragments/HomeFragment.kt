@@ -6,8 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import com.example.uncovid.*
+import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.fragment_home.*
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
+import com.example.uncovid.lifecycle.ResourceHandler
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -15,12 +20,14 @@ import kotlinx.android.synthetic.main.fragment_home.*
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [HomeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class HomeFragment : Fragment() {
+
+    private val resourceHandler: ResourceHandler = ResourceHandler()
+
+    //private val sharedViewModel: SharedViewModel by activityViewModels()
+    lateinit var viewModel: SharedViewModel
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -31,6 +38,16 @@ class HomeFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+        //println("fragment id: " + sharedViewModel.currentID.value)
+        /*
+        val idObserver = Observer<String>{ id ->
+            hiText2.text = "Hi " + id + " 👋"
+            println("observe id: " + sharedViewModel.currentID.value)
+            sharedViewModel.currentID.setValue(id)
+        }
+        sharedViewModel.currentID.observe(this, idObserver)
+
+         */
     }
 
     override fun onCreateView(
@@ -43,6 +60,18 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        //sharedViewModel.currentID.observe(viewLifecycleOwner, Observer<String> { id ->
+        //    hiText2.text = "Hi, " + id + " 👋"
+        //})
+
+        viewModel = ViewModelProvider(this).get(SharedViewModel::class.java)
+        viewModel.currentID.observe(viewLifecycleOwner, { id ->
+            hiText2.text = "Hi, " + id + " 👋"
+        })
+
+        //lifecycle.addObserver(resourceHandler)
+
         reminderHomeBtn.setOnClickListener {
             val intent = Intent (activity, ReminderActivity::class.java)
             activity?.startActivity(intent)

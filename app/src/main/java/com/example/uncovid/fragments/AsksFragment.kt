@@ -5,10 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.uncovid.R
 import com.example.uncovid.RecyclerAdapter
+import com.example.uncovid.SharedViewModel
 import kotlinx.android.synthetic.main.fragment_asks.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -16,12 +18,10 @@ import kotlinx.android.synthetic.main.fragment_asks.*
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [AsksFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class AsksFragment : Fragment() {
+
+    private val sharedViewModel: SharedViewModel by activityViewModels()
 
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>? = null
