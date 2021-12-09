@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_1"
+    tools:context=".AddAnswerActivity">
+
+    <ImageButton
+        android:id="@+id/backAddAnsBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/back_1" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="700dp"
+        android:layout_marginTop="15dp"
+        app:cardCornerRadius="30dp"
+        app:contentPaddingLeft="30dp"
+        app:contentPaddingRight="30dp"
+        app:contentPaddingTop="55dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backAddAnsBtn">
+
+        <TextView
+            android:id="@+id/answerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/amiko"
+            android:text="What is COVID-19?"
+            android:textColor="@color/text_1"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/answerDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:fontFamily="@font/amiko"
+            android:text="Jan 2, 2021"
+            android:textColor="@color/text_5"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:fontFamily="@font/amiko"
+            android:lineSpacingExtra="10sp"
+            android:text="There is no answer."
+            android:textColor="@color/text_5"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/addAnsBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="200dp"
+            android:fontFamily="sans-serif-medium"
+            android:shadowRadius="6"
+            android:text="@string/add_my_answer"
+            android:textAllCaps="false"
+            android:textColor="@color/text_6"
+            android:textSize="16sp"
+            app:cornerRadius="17dp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/ansInputCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:elevation="0dp"
+            android:outlineAmbientShadowColor="@color/background_3"
+            android:outlineSpotShadowColor="@color/background_3"
+            android:paddingVertical="10dp"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/editTextTextMultiLine2"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@drawable/answer_input_box"
+                android:elevation="10dp"
+                android:ems="10"
+                android:fontFamily="@font/amiko"
+                android:gravity="start|top"
+                android:hint="Enter your answer..."
+                android:inputType="textMultiLine"
+                android:lineHeight="20dp"
+                android:outlineAmbientShadowColor="@color/background_2"
+                android:outlineSpotShadowColor="@color/background_2"
+                android:padding="20dp"
+                android:singleLine="false"
+                android:textColor="@color/text_1"
+                android:textColorHint="@color/text_3"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="260dp"
+                android:layout_marginRight="15dp"
+                android:text="400 words"
+                android:textColor="@color/text_5"
+                android:textSize="13sp" />
+
+            <Button
+                android:id="@+id/confirmAnsBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="400dp"
+                android:fontFamily="sans-serif-medium"
+                android:shadowRadius="6"
+                android:text="@string/confirm"
+                android:textAllCaps="false"
+                android:textColor="@color/text_6"
+                android:textSize="16sp"
+                app:cornerRadius="17dp" />
+        </androidx.cardview.widget.CardView>
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
