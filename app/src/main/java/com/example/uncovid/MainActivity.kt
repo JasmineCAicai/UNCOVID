@@ -3,6 +3,8 @@ package com.example.uncovid
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.example.uncovid.databinding.ActivityMainBinding
 import com.example.uncovid.fragments.AsksFragment
 import com.example.uncovid.fragments.HomeFragment
 import com.example.uncovid.fragments.ProfileFragment
@@ -10,9 +12,15 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var viewModel: SharedViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        // View model
 
         val homeFragment = HomeFragment()
         val asksFragment = AsksFragment()

@@ -3,6 +3,7 @@
     package="com.example.uncovid" >
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -39,9 +40,6 @@
             android:name=".ReminderActivity"
             android:exported="true" />
         <activity
-            android:name=".HomeActivity"
-            android:exported="true" />
-        <activity
             android:name=".MainActivity"
             android:exported="true" />
         <activity
@@ -53,6 +51,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
 
         <meta-data
             android:name="preloaded_fonts"
