@@ -27,15 +27,16 @@ class SignupActivity : AppCompatActivity() {
             startActivity(intent)
         }
         btnSignup.setOnClickListener {
-            registerUser()
-            initReminder()
-            Toast.makeText(this, "Sign up successfully!", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
+             if (registerUser()) {
+                 initReminder()
+                 Toast.makeText(this, "Sign up successfully!", Toast.LENGTH_SHORT).show()
+                 val intent = Intent(this, LoginActivity::class.java)
+                 startActivity(intent)
+             }
         }
     }
 
-    private fun registerUser() {
+    private fun registerUser(): Boolean {
 
         var id = idNumber.text.toString()
         var phoneNo = phoneNum_2.text.toString()
@@ -44,31 +45,31 @@ class SignupActivity : AppCompatActivity() {
         if (id!!.isEmpty()) {
             idNumber.error = "ID card number required!"
             idNumber.requestFocus()
-            return
+            return false
         }
 
         if (phoneNo!!.isEmpty()) {
             phoneNum_2.error = "Phone number required!"
             phoneNum_2.requestFocus()
-            return
+            return false
         }
 
         if (dbHelper.checkDuplicate(phoneNo)) {
             phoneNum_2.error = "Phone number was registered!"
             phoneNum_2.requestFocus()
-            return
+            return false
         }
 
         if (pwd!!.isEmpty()) {
             password_2.error = "Password required!"
             password_2.requestFocus()
-            return
+            return false
         }
 
         var user = User(id, phoneNo, pwd, names[Random.nextInt(0, 5)])
 
         dbHelper.insertUserData(user)
-        return
+        return true
     }
 
     private fun initReminder() {
