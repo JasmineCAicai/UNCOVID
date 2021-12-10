@@ -5,15 +5,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
-import com.example.uncovid.DB.ReminderDBHelper
+import com.example.uncovid.DB.DBHelper
 import com.example.uncovid.entity.Reminder
 import kotlinx.android.synthetic.main.activity_reminder.*
 
 class ReminderActivity : AppCompatActivity() {
 
-    lateinit var reminderDBHelper: ReminderDBHelper
-
     private val model: SharedViewModel by viewModels()
+
+    lateinit var dbHelper: DBHelper
 
     private var reminder = Reminder("", 0, 0, 0)
 
@@ -21,7 +21,7 @@ class ReminderActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reminder)
 
-        reminderDBHelper = ReminderDBHelper(this)
+        dbHelper = DBHelper(this)
 
         remBack1Btn.setOnClickListener {
             finish()
@@ -35,7 +35,7 @@ class ReminderActivity : AppCompatActivity() {
 
         println(_id)
 
-        reminder = reminderDBHelper.getReminderData(_id)
+        reminder = dbHelper.getReminderData(_id)
 
         remVacBtn.isChecked = reminder.rem1 == 1
         remNucBtn.isChecked = reminder.rem2 == 1
@@ -45,21 +45,21 @@ class ReminderActivity : AppCompatActivity() {
             remVacBtn.isChecked = !remVacBtn.isChecked
             if (remVacBtn.isChecked) reminder.rem1 = 1
             else reminder.rem1 = 0
-            reminderDBHelper.updateReminderData(reminder)
+            dbHelper.updateReminderData(reminder)
         }
 
         remNucBtn.setOnClickListener {
             remNucBtn.isChecked = !remNucBtn.isChecked
             if (remNucBtn.isChecked) reminder.rem2 = 1
             else reminder.rem2 = 0
-            reminderDBHelper.updateReminderData(reminder)
+            dbHelper.updateReminderData(reminder)
         }
 
         remTemBtn.setOnClickListener {
             remTemBtn.isChecked = !remTemBtn.isChecked
             if (remTemBtn.isChecked) reminder.rem3 = 1
             else reminder.rem3 = 0
-            reminderDBHelper.updateReminderData(reminder)
+            dbHelper.updateReminderData(reminder)
         }
 
         knowCorBtn.setOnClickListener {
