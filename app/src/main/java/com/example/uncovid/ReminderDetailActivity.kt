@@ -28,24 +28,21 @@ class ReminderDetailActivity : AppCompatActivity() {
                         "ill or die at any age."
             }
             2 -> {
-                remDetailTitle.text = "How to Avoid"
+                remDetailTitle.text = "How to Prevent"
                 remDetIcon.setImageResource(R.mipmap.avoid)
-                remDetText.text = "AAAAAAAAAA AAAAAA AAAAAAAAA AA A AAAAAAAA AAAAAA " +
-                        "AAAAA AA AAA SARS-CoV-2 virus.\n Older people and those with " +
-                        "underlying medical conditions like cardiovascular disease, diabetes, " +
-                        "chronic respiratory disease, or cancer are more likely to develop " +
-                        "serious illness. Anyone can get sick with COVID-19 and become seriously " +
-                        "ill or die at any age."
+                remDetText.text = "1. Maintain a safe distance from others (at least 1 metre), even if they don’t appear to be sick.\n" +
+                        "2. Wear a mask in public, especially indoors or when physical distancing is not possible.\n" +
+                        "3. Choose open, well-ventilated spaces over closed ones. Open a window if indoors.\n" +
+                        "4. Clean your hands often. Use soap and water, or an alcohol-based hand rub.\n" +
+                        "5. Get vaccinated when it’s your turn. Follow local guidance about vaccination."
             }
             3 -> {
                 remDetailTitle.text = "How to Treat"
                 remDetIcon.setImageResource(R.mipmap.treat)
-                remDetText.text = "TTTTTTTTT TTTTTTT TTTTTTTT TT T TTTTTTTTT TTTTTTT " +
-                        "TTTTTT TT TTT SARS-CoV-2 virus.\n Older people and those with " +
-                        "underlying medical conditions like cardiovascular disease, diabetes, " +
-                        "chronic respiratory disease, or cancer are more likely to develop " +
-                        "serious illness. Anyone can get sick with COVID-19 and become seriously " +
-                        "ill or die at any age."
+                remDetText.text = "Scientists around the world are working to find and develop treatments for COVID-19.\n" +
+                        "Optimal supportive care includes oxygen for severely ill patients and those who are at risk for severe disease and more advanced respiratory support" +
+                        " such as ventilation for patients who are critically ill.\n" +
+                        "Dexamethasone is a corticosteroid that can help reduce the length of time on a ventilator and save lives of patients with severe and critical illness."
             }
         }
     }

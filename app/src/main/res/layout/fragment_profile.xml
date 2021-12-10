@@ -165,6 +165,16 @@
             android:layout_marginTop="10dp"
             android:text="2021-10-16 17:12:16" />
 
+        <ImageView
+            android:id="@+id/logoutBtn"
+            android:layout_width="24dp"
+            android:layout_height="23dp"
+            android:layout_above="@+id/imageView19"
+            android:layout_marginStart="80dp"
+            android:layout_marginBottom="-40dp"
+            android:layout_toEndOf="@+id/imageView19"
+            android:src="@mipmap/logout" />
+
     </RelativeLayout>
 
 </FrameLayout>

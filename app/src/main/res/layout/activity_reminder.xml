@@ -152,7 +152,7 @@
         app:cardElevation="15dp"
         app:contentPaddingBottom="40dp"
         app:contentPaddingLeft="20dp"
-        app:contentPaddingRight="150dp"
+        app:contentPaddingRight="130dp"
         app:contentPaddingTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -193,7 +193,7 @@
             android:layout_marginLeft="50dp"
             android:layout_marginTop="110dp"
             android:fontFamily="@font/amiko"
-            android:text="How to avoid"
+            android:text="How to prevent"
             android:textColor="@color/text_5"
             android:textSize="17sp" />
 
