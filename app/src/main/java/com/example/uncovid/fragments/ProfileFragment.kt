@@ -1,5 +1,6 @@
 package com.example.uncovid.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,7 +9,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.example.uncovid.LoginActivity
 import com.example.uncovid.R
+import com.example.uncovid.ReminderActivity
 import com.example.uncovid.SharedViewModel
 import com.example.uncovid.databinding.FragmentProfileBinding
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -52,6 +55,10 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        logoutBtn.setOnClickListener {
+            val intent = Intent (activity, LoginActivity::class.java)
+            activity?.startActivity(intent)
+        }
     }
 
     companion object {

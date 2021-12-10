@@ -26,7 +26,7 @@ class HomeFragment : Fragment() {
     private val resourceHandler: ResourceHandler = ResourceHandler()
 
     //private val sharedViewModel: SharedViewModel by activityViewModels()
-    lateinit var viewModel: SharedViewModel
+    private lateinit var viewModel: SharedViewModel
 
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -65,10 +65,6 @@ class HomeFragment : Fragment() {
         //    hiText2.text = "Hi, " + id + " 👋"
         //})
 
-        viewModel = ViewModelProvider(this).get(SharedViewModel::class.java)
-        viewModel.currentID.observe(viewLifecycleOwner, { id ->
-            hiText2.text = "Hi, " + id + " 👋"
-        })
 
         //lifecycle.addObserver(resourceHandler)
 
@@ -87,15 +83,39 @@ class HomeFragment : Fragment() {
             val intent = Intent (activity, LocationListActivity::class.java)
             activity?.startActivity(intent)
         }
+        statisticHomeBtn.setOnClickListener {
+            val intent = Intent (activity, StatisticActivity::class.java)
+            activity?.startActivity(intent)
+        }
         none.setOnClickListener {
             val intent = Intent (activity, LocationDetailActivity::class.java)
             activity?.startActivity(intent)
         }
+
         homeCard1.setOnClickListener {
+            val intent = Intent(activity, ReminderDetailActivity::class.java)
+            intent.putExtra("option", 1)
+            startActivity(intent)
+        }
+        homeCard2.setOnClickListener {
             val intent = Intent(activity, ReminderDetailActivity::class.java)
             intent.putExtra("option", 2)
             startActivity(intent)
         }
+        homeCard3.setOnClickListener {
+            val intent = Intent(activity, ReminderDetailActivity::class.java)
+            intent.putExtra("option", 3)
+            startActivity(intent)
+        }
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        viewModel = ViewModelProvider(this).get(SharedViewModel::class.java)
+        viewModel.currentID.observe(viewLifecycleOwner, { id ->
+            hiText2.text = "Hi, " + id + " 👋"
+        })
     }
 
     companion object {

@@ -4,15 +4,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.viewModels
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.uncovid.DB.UserDBHelper
+import com.example.uncovid.DB.DBHelper
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
 
-    lateinit var userDbHelper: UserDBHelper
+    lateinit var dbHelper: DBHelper
 
     //private val model: SharedViewModel by viewModels()
 
@@ -22,7 +20,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        userDbHelper = UserDBHelper(this)
+        dbHelper = DBHelper(this)
 
         viewModel = ViewModelProvider(this).get(SharedViewModel::class.java)
 
@@ -32,7 +30,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         btnSignin.setOnClickListener {
-            if (userDbHelper.userVerify(phoneNum_1.text.toString(), password_1.text.toString())) {
+            if (dbHelper.userVerify(phoneNum_1.text.toString(), password_1.text.toString())) {
 
                 Toast.makeText(this, "Login successfully!", Toast.LENGTH_SHORT).show()
 
