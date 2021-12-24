@@ -64,7 +64,7 @@
         <entry key="app/src/main/res/layout/activity_reminder_detail.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_statistic.xml" value="0.16036036036036036" />
-        <entry key="app/src/main/res/layout/activity_view_answer.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_view_answer.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_asks.xml" value="0.2111111111111111" />
         <entry key="app/src/main/res/layout/fragment_history.xml" value="0.14504504504504503" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.335" />
