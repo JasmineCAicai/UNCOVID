@@ -1,0 +1,50 @@
+[
+  {
+    "qid": 0,
+    "title": "What is COVID-19?",
+    "date": "Jan 1, 2021",
+    "content": "Coronavirus disease (COVID-19) is an infectious disease caused by the SARS- CoV-2 virus.\nMost people infected with the virus will experience mild to moderate respiratory illness and recover without requiring special treatment. However, some will become seriously ill and require medical attention. Older people and those with underlying medical conditions like cardiovascular disease, diabetes, chronic respiratory disease, or cancer are more likely to develop serious illness. Anyone can get sick with COVID-19 and become seriously ill or die at any age."
+  },
+  {
+    "qid": 1,
+    "title": "What causes COVID-19?",
+    "date": "Jan 2, 2021",
+    "content": "Infection with severe acute respiratory syndrome coronavirus 2, or SARS-CoV-2, causes coronavirus disease 2019 (COVID-19).\nThe virus that causes COVID-19 spreads easily among people. Data has shown that the COVID-19 virus spreads mainly from person to person among those in close contact (within about 6 feet, or 2 meters). The virus spreads by respiratory droplets released when someone with the virus coughs, sneezes, breathes, sings or talks. These droplets can be inhaled or land in the mouth, nose or eyes of a person nearby."
+  },
+  {
+    "qid": 2,
+    "title": "Where was COVID-19 first discovered?",
+    "date": "Jan 3, 2021",
+    "content": "The first known infections from SARS‑CoV‑2 were discovered in Wuhan, China. The original source of viral transmission to humans remains unclear, as does whether the virus became pathogenic before or after the spillover event. Because many of the early infectees were workers at the Huanan Seafood Market, it has been suggested that the virus might have originated from the market. \nHowever, other research indicates that visitors may have introduced the virus to the market, which then facilitated rapid expansion of the infections. A March 2021 WHO-convened report stated that human spillover via an intermediate animal host was the most likely explanation, with direct spillover from bats next most likely. Introduction through the food supply chain and the Huanan Seafood Market was considered another possible, but less likely, explanation.[83] An analysis in November 2021, however, said that the earliest-known case had been misidentified and that the preponderance of early cases linked to the Huanan Market argued for it being the source."
+  },
+  {
+    "qid": 3,
+    "title": "How does COVID-19 spread?",
+    "date": "Jan 4, 2021",
+    "content": "Current evidence suggests that the virus spreads mainly between people who are in close contact with each other, for example at a conversational distance. \nThe virus can spread from an infected person’s mouth or nose in small liquid particles when they cough, sneeze, speak, sing or breathe. Another person can then contract the virus when infectious particles that pass through the air are inhaled at short range (this is often called short-range aerosol or short-range airborne transmission) or if infectious particles come into direct contact with the eyes, nose, or mouth (droplet transmission)."
+  },
+  {
+    "qid": 4,
+    "title": "What are coronaviruses?",
+    "date": "Jan 5, 2021",
+    "content": "Coronaviruses are a large family of viruses that usually cause mild to moderate upper-respiratory tract illnesses, like the common cold. However, three new coronaviruses have emerged from animal reservoirs over the past two decades to cause serious and widespread illness and death.\nThere are hundreds of coronaviruses, most of which circulate among such animals as pigs, camels, bats and cats. Sometimes those viruses jump to humans—called a spillover event—and can cause disease. Four of the seven known coronaviruses that sicken people cause only mild to moderate disease. Three can cause more serious, even fatal, disease."
+  },
+  {
+    "qid": 5,
+    "title": "How do viruses get their name?",
+    "date": "Jan 6, 2021",
+    "content": "Viruses, and the diseases they cause, often have different names.  For example, HIV is the virus that causes AIDS.  People often know the name of a disease, but not the name of the virus that causes it.\nThere are different processes, and purposes, for naming viruses and diseases.\nViruses are named based on their genetic structure to facilitate the development of diagnostic tests, vaccines and medicines. Virologists and the wider scientific community do this work, so viruses are named by the International Committee on Taxonomy of Viruses (ICTV).  "
+  },
+  {
+    "qid": 6,
+    "title": "In what conditions does COVID-19 survive?",
+    "date": "Jan 7, 2021",
+    "content": "The amount of time that the virus can survive depends significantly on the type of surface, the temperature, and the humidity. Coronaviruses die very quickly when exposed to the UV light in sunlight. Like other enveloped viruses, SARS-CoV-2 survives longest when the temperature is at room temperature or lower, and when the relative humidity is low (<50%).\nOn many surfaces, including glass, some types of plastic, stainless steel, and skin, the virus can remain infective for several days indoors at room temperature, or even about a week under ideal conditions. On some surfaces, including cotton fabric and copper, the virus usually dies after a few hours. The virus dies faster on porous surfaces than on non-porous surfaces due to capillary action within pores and faster aerosol droplet evaporation. However, of the many surfaces tested, two with the longest survival times are N95 respirator masks and surgical masks, both of which are considered porous surfaces."
+  },
+  {
+    "qid": 7,
+    "title": "When COVID-19 will spread more easily?",
+    "date": "Jan 8, 2021",
+    "content": "Any situation in which people are in close proximity to one another for long periods of time increases the risk of transmission. Indoor locations, especially settings where there is poor ventilation, are riskier than outdoor locations. Activities where more particles are expelled from the mouth, such as singing or breathing heavily during exercise, also increase the risk of transmission."
+  }
+]

@@ -20,12 +20,11 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     private var dates = arrayOf("Jan 1, 2021", "Jan 2, 2021", "Jan 3, 2021", "Jan 4, 2021",
         "Jan 5, 2021", "Jan 6, 2021", "Jan 7, 2021", "Jan 8, 2021")
 
-    private var images = intArrayOf(R.mipmap.circle, R.mipmap.circle, R.mipmap.circle,
-        R.mipmap.circle, R.mipmap.circle, R.mipmap.circle, R.mipmap.circle, R.mipmap.circle)
+    //private var images = intArrayOf(R.mipmap.circle, R.mipmap.circle, R.mipmap.circle, R.mipmap.circle, R.mipmap.circle, R.mipmap.circle, R.mipmap.circle, R.mipmap.circle)
     
-    private var question_id = intArrayOf(0, 1, 2, 3, 4, 5, 6, 7)
+    //private var question_id = intArrayOf(0, 1, 2, 3, 4, 5, 6, 7)
 
-    private var answered = booleanArrayOf(true, false, false, false, false, false, false, false)
+    //private var answered = booleanArrayOf(true, false, false, false, false, false, false, false)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerAdapter.ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.question_card_layout, parent, false)
@@ -35,7 +34,7 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     override fun onBindViewHolder(holder: RecyclerAdapter.ViewHolder, position: Int) {
         holder.itemTitle.text = titles[position]
         holder.itemDate.text = dates[position]
-        holder.itemImage.setImageResource(images[position])
+        holder.itemImage.setImageResource(R.mipmap.circle)
     }
 
     override fun getItemCount(): Int {
@@ -53,6 +52,11 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
                 Toast.makeText(itemView.context, "you clicked on ${titles[position]}", Toast.LENGTH_LONG).show()
 
+                val intent = Intent(it.context, ViewAnswerActivity::class.java)
+                intent.putExtra("qid", position)
+                it.context.startActivity(intent)
+
+                /*
                 if (answered[position]) {
                     val intent = Intent(it.context, ViewAnswerActivity::class.java)
                     it.context.startActivity(intent)
@@ -61,6 +65,7 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
                     val intent = Intent(it.context, AddAnswerActivity::class.java)
                     it.context.startActivity(intent)
                 }
+                 */
             }
         }
     }
