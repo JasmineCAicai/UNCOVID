@@ -37,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
                 viewModel.currentID.value = phoneNum_1.text.toString()
 
                 val intent = Intent(this, MainActivity::class.java)
-                //intent.putExtra("id", phoneNum_1.text.toString())
+                intent.putExtra("id", phoneNum_1.text.toString())
                 startActivity(intent)
             }
             else {
