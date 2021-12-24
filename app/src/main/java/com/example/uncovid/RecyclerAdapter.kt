@@ -12,16 +12,18 @@ import kotlinx.android.synthetic.main.question_card_layout.view.*
 
 class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
-    private var titles = arrayOf("What is COVID-19?", "What is COVID-19?",
-        "What is COVID-19?", "What is COVID-19?",
-        "What is COVID-19?", "What is COVID-19?",
-        "What is COVID-19?", "What is COVID-19?")
+    private var titles = arrayOf("What is COVID-19?", "What causes COVID-19?",
+        "Where was COVID-19 first discovered?", "How does COVID-19 spread?",
+        "What are coronaviruses?", "How do viruses get their name?",
+        "In what conditions does COVID-19 survive?", "When COVID-19 will spread more easily?")
 
     private var dates = arrayOf("Jan 1, 2021", "Jan 2, 2021", "Jan 3, 2021", "Jan 4, 2021",
         "Jan 5, 2021", "Jan 6, 2021", "Jan 7, 2021", "Jan 8, 2021")
 
     private var images = intArrayOf(R.mipmap.circle, R.mipmap.circle, R.mipmap.circle,
         R.mipmap.circle, R.mipmap.circle, R.mipmap.circle, R.mipmap.circle, R.mipmap.circle)
+    
+    private var question_id = intArrayOf(0, 1, 2, 3, 4, 5, 6, 7)
 
     private var answered = booleanArrayOf(true, false, false, false, false, false, false, false)
 

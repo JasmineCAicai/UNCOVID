@@ -33,9 +33,11 @@ class ReminderActivity : AppCompatActivity() {
         }
         model.currentID.observe(this, idObserver)
 
-        println(_id)
+        // println(_id)
 
-        reminder = dbHelper.getReminderData(_id)
+        // reminder = dbHelper.getReminderData(_id)
+        reminder = dbHelper.getReminderData(intent.getStringExtra("id")!!)
+        println(intent.getStringExtra("id"))
 
         remVacBtn.isChecked = reminder.rem1 == 1
         remNucBtn.isChecked = reminder.rem2 == 1
