@@ -64,6 +64,12 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
 
     implementation 'com.google.code.gson:gson:2.8.5'
+
+    //implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    implementation 'com.jjoe64:graphview:4.2.2'
+
+    implementation 'com.squareup.okhttp3:okhttp:3.8.1'
 }
 
 apply plugin: 'com.google.gms.google-services'
