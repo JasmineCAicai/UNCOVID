@@ -68,8 +68,11 @@ class HomeFragment : Fragment() {
 
         //lifecycle.addObserver(resourceHandler)
 
+        hiText2.text = "Hi, " + activity?.intent?.getStringExtra("id") + " 👋"
+
         reminderHomeBtn.setOnClickListener {
             val intent = Intent (activity, ReminderActivity::class.java)
+            intent.putExtra("id", intent.getStringExtra("id"))
             activity?.startActivity(intent)
         }
         faqHomeBtn.setOnClickListener {
