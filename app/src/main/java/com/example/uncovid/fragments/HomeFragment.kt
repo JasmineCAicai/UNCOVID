@@ -16,6 +16,7 @@ import androidx.lifecycle.Observer
 import com.example.uncovid.DB.DBHelper
 import com.example.uncovid.entity.Cases
 import com.example.uncovid.lifecycle.ResourceHandler
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_statistic.*
 import okhttp3.*
 import org.json.JSONArray
@@ -130,6 +131,7 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         }
         faqHomeBtn.setOnClickListener {
+            (activity as MainActivity?)!!.bottom_navigation.selectedItemId = R.id.ic_question_answer
             (activity as MainActivity?)!!.makeCurrentFragment(AsksFragment())
         }
         scannerHomeBtn.setOnClickListener {
