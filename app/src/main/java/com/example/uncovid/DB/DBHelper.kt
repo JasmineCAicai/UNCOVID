@@ -92,9 +92,9 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, dbname, factory, ve
     }
 
     fun getReminderData(phoneNo: String): Reminder {
-        val r = Reminder(phoneNo, 0, 0, 0)
+        var r = Reminder(phoneNo, 0, 0, 0)
         val db = writableDatabase
-        val query = "select * from users where phoneNo = \"$phoneNo\";"
+        val query = "select * from reminders where phoneNo = \"$phoneNo\";"
         val cursor = db.rawQuery(query, null)
         if (cursor.count <= 0) {
             cursor.close()

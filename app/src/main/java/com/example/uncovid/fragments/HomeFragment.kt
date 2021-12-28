@@ -125,8 +125,8 @@ class HomeFragment : Fragment() {
 
         reminderHomeBtn.setOnClickListener {
             val intent = Intent (activity, ReminderActivity::class.java)
-            intent.putExtra("id", intent.getStringExtra("id"))
-            activity?.startActivity(intent)
+            intent.putExtra("id", id)
+            startActivity(intent)
         }
         faqHomeBtn.setOnClickListener {
             (activity as MainActivity?)!!.makeCurrentFragment(AsksFragment())
