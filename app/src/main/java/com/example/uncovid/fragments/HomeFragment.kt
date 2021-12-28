@@ -67,10 +67,9 @@ class HomeFragment : Fragment() {
 
         var id = activity?.intent?.getStringExtra("id")
         var name = dbHelper.getUserName(id!!)
-        //hiText2.text = "Hi, " + activity?.intent?.getStringExtra("id") + " 👋"
         hiText2.text = "Hi, " + name + " 👋"
 
-        /*
+
         var urlCases = "https://api.coronavirus.data.gov.uk/v2/data?areaType=overview&metric=cumCasesByPublishDate&format=json"
         val requestCases = Request.Builder().url(urlCases).build()
 
@@ -90,8 +89,10 @@ class HomeFragment : Fragment() {
                 var confirmed = jsonObjectDetail.getInt("cumCasesByPublishDate")
                 var prevConfirmed = jsonObjectPrev.getInt("cumCasesByPublishDate")
 
-                casesHome.text = confirmed.toString()
-                if (confirmed == prevConfirmed) casesHomeIcon.setImageResource(R.mipmap.icdash)
+                activity?.runOnUiThread {
+                    casesHome.text = confirmed.toString()
+                    if (confirmed == prevConfirmed) casesHomeIcon.setImageResource(R.mipmap.icdash)
+                }
             }
         })
 
@@ -115,12 +116,12 @@ class HomeFragment : Fragment() {
                 var death = jsonObjectDetail.getInt("cumDeaths28DaysByPublishDate")
                 var prevDeath = jsonObjectPrev.getInt("cumDeaths28DaysByPublishDate")
 
-                deathsHome.text = death.toString()
-                if (death == prevDeath) deathsHomeIcon.setImageResource(R.mipmap.icdash)
+                activity?.runOnUiThread {
+                    deathsHome.text = death.toString()
+                    if (death == prevDeath) deathsHomeIcon.setImageResource(R.mipmap.icdash)
+                }
             }
         })
-
-         */
 
 
         reminderHomeBtn.setOnClickListener {
