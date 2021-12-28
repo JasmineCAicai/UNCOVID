@@ -13,6 +13,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import com.example.uncovid.DB.DBHelper
 import com.example.uncovid.entity.Cases
 import com.example.uncovid.lifecycle.ResourceHandler
 import kotlinx.android.synthetic.main.activity_statistic.*
@@ -29,6 +30,8 @@ private const val ARG_PARAM2 = "param2"
 
 
 class HomeFragment : Fragment() {
+
+    lateinit var dbHelper: DBHelper
 
     private val resourceHandler: ResourceHandler = ResourceHandler()
 
@@ -60,9 +63,14 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        /*
-        hiText2.text = "Hi, " + activity?.intent?.getStringExtra("id") + " 👋"
+        dbHelper = DBHelper(requireContext())
 
+        var id = activity?.intent?.getStringExtra("id")
+        var name = dbHelper.getUserName(id!!)
+        //hiText2.text = "Hi, " + activity?.intent?.getStringExtra("id") + " 👋"
+        hiText2.text = "Hi, " + name + " 👋"
+
+        /*
         var urlCases = "https://api.coronavirus.data.gov.uk/v2/data?areaType=overview&metric=cumCasesByPublishDate&format=json"
         val requestCases = Request.Builder().url(urlCases).build()
 
@@ -117,8 +125,8 @@ class HomeFragment : Fragment() {
 
         reminderHomeBtn.setOnClickListener {
             val intent = Intent (activity, ReminderActivity::class.java)
-            intent.putExtra("id", intent.getStringExtra("id"))
-            activity?.startActivity(intent)
+            intent.putExtra("id", id)
+            startActivity(intent)
         }
         faqHomeBtn.setOnClickListener {
             (activity as MainActivity?)!!.makeCurrentFragment(AsksFragment())

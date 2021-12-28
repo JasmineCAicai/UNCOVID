@@ -3,6 +3,9 @@ package com.example.uncovid
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.CompoundButton
+import android.widget.RadioButton
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import com.example.uncovid.DB.DBHelper
@@ -15,7 +18,7 @@ class ReminderActivity : AppCompatActivity() {
 
     lateinit var dbHelper: DBHelper
 
-    private var reminder = Reminder("", 0, 0, 0)
+    //private var reminder = Reminder("", 0, 0, 0)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,35 +36,36 @@ class ReminderActivity : AppCompatActivity() {
         }
         model.currentID.observe(this, idObserver)
 
-        // println(_id)
 
-        // reminder = dbHelper.getReminderData(_id)
-        reminder = dbHelper.getReminderData(intent.getStringExtra("id")!!)
-        println(intent.getStringExtra("id"))
+        var id = this.intent.getStringExtra("id")
+        var reminder : Reminder = dbHelper.getReminderData(id!!)
 
         remVacBtn.isChecked = reminder.rem1 == 1
         remNucBtn.isChecked = reminder.rem2 == 1
         remTemBtn.isChecked = reminder.rem3 == 1
 
-        remVacBtn.setOnClickListener {
-            remVacBtn.isChecked = !remVacBtn.isChecked
-            if (remVacBtn.isChecked) reminder.rem1 = 1
-            else reminder.rem1 = 0
-            dbHelper.updateReminderData(reminder)
+        remVacBtn.setOnCheckedChangeListener{ _, _ ->
+            if (remVacBtn.isChecked) {
+                reminder.rem1 = 1
+                dbHelper.updateReminderData(reminder)
+                println("Check Vac task successful!")
+            }
         }
 
-        remNucBtn.setOnClickListener {
-            remNucBtn.isChecked = !remNucBtn.isChecked
-            if (remNucBtn.isChecked) reminder.rem2 = 1
-            else reminder.rem2 = 0
-            dbHelper.updateReminderData(reminder)
+        remNucBtn.setOnCheckedChangeListener{ _, _ ->
+            if (remNucBtn.isChecked) {
+                reminder.rem2 = 1
+                dbHelper.updateReminderData(reminder)
+                println("Check Nuc task successful!")
+            }
         }
 
-        remTemBtn.setOnClickListener {
-            remTemBtn.isChecked = !remTemBtn.isChecked
-            if (remTemBtn.isChecked) reminder.rem3 = 1
-            else reminder.rem3 = 0
-            dbHelper.updateReminderData(reminder)
+        remTemBtn.setOnCheckedChangeListener{ _, _ ->
+            if (remTemBtn.isChecked) {
+                reminder.rem3 = 1
+                dbHelper.updateReminderData(reminder)
+                println("Check Tem task successful!")
+            }
         }
 
         knowCorBtn.setOnClickListener {
