@@ -6,13 +6,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.example.uncovid.*
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import com.example.uncovid.entity.Cases
 import com.example.uncovid.lifecycle.ResourceHandler
+import kotlinx.android.synthetic.main.activity_statistic.*
+import okhttp3.*
+import org.json.JSONArray
+import org.json.JSONObject
+import java.io.IOException
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -28,6 +35,8 @@ class HomeFragment : Fragment() {
     //private val sharedViewModel: SharedViewModel by activityViewModels()
     private lateinit var viewModel: SharedViewModel
 
+    val client = OkHttpClient()
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -38,16 +47,6 @@ class HomeFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
-        //println("fragment id: " + sharedViewModel.currentID.value)
-        /*
-        val idObserver = Observer<String>{ id ->
-            hiText2.text = "Hi " + id + " 👋"
-            println("observe id: " + sharedViewModel.currentID.value)
-            sharedViewModel.currentID.setValue(id)
-        }
-        sharedViewModel.currentID.observe(this, idObserver)
-
-         */
     }
 
     override fun onCreateView(
@@ -61,14 +60,60 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //sharedViewModel.currentID.observe(viewLifecycleOwner, Observer<String> { id ->
-        //    hiText2.text = "Hi, " + id + " 👋"
-        //})
-
-
-        //lifecycle.addObserver(resourceHandler)
-
+        /*
         hiText2.text = "Hi, " + activity?.intent?.getStringExtra("id") + " 👋"
+
+        var urlCases = "https://api.coronavirus.data.gov.uk/v2/data?areaType=overview&metric=cumCasesByPublishDate&format=json"
+        val requestCases = Request.Builder().url(urlCases).build()
+
+        client.newCall(requestCases).enqueue(object: Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                Toast.makeText(context, "Failure to fetch confirmed cases data", Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                var strResponse = response.body()!!.string()
+                val jsonContact: JSONObject = JSONObject(strResponse)
+                var jsonarrayInfo: JSONArray = jsonContact.getJSONArray("body")
+
+                var jsonObjectDetail: JSONObject = jsonarrayInfo.getJSONObject(0)
+                var jsonObjectPrev: JSONObject = jsonarrayInfo.getJSONObject(1)
+
+                var confirmed = jsonObjectDetail.getInt("cumCasesByPublishDate")
+                var prevConfirmed = jsonObjectPrev.getInt("cumCasesByPublishDate")
+
+                casesHome.text = confirmed.toString()
+                if (confirmed == prevConfirmed) casesHomeIcon.setImageResource(R.mipmap.icdash)
+            }
+        })
+
+
+        var urlDeath = "https://api.coronavirus.data.gov.uk/v2/data?areaType=overview&metric=cumDeaths28DaysByPublishDate&format=json"
+        val requestDeath = Request.Builder().url(urlDeath).build()
+
+        client.newCall(requestDeath).enqueue(object: Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                Toast.makeText(context, "Failure to fetch death cases data", Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                var strResponse = response.body()!!.string()
+                val jsonContact: JSONObject = JSONObject(strResponse)
+                var jsonarrayInfo: JSONArray = jsonContact.getJSONArray("body")
+
+                var jsonObjectDetail: JSONObject = jsonarrayInfo.getJSONObject(0)
+                var jsonObjectPrev: JSONObject = jsonarrayInfo.getJSONObject(1)
+
+                var death = jsonObjectDetail.getInt("cumDeaths28DaysByPublishDate")
+                var prevDeath = jsonObjectPrev.getInt("cumDeaths28DaysByPublishDate")
+
+                deathsHome.text = death.toString()
+                if (death == prevDeath) deathsHomeIcon.setImageResource(R.mipmap.icdash)
+            }
+        })
+
+         */
+
 
         reminderHomeBtn.setOnClickListener {
             val intent = Intent (activity, ReminderActivity::class.java)
@@ -114,12 +159,8 @@ class HomeFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
-        viewModel = ViewModelProvider(this).get(SharedViewModel::class.java)
-        viewModel.currentID.observe(viewLifecycleOwner, { id ->
-            hiText2.text = "Hi, " + id + " 👋"
-        })
     }
+
 
     companion object {
         /**
