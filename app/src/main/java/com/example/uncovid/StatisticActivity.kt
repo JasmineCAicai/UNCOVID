@@ -12,6 +12,7 @@ import com.example.uncovid.entity.DailyCase
 import com.jjoe64.graphview.series.DataPoint
 import com.jjoe64.graphview.series.LineGraphSeries
 import kotlinx.android.synthetic.main.activity_statistic.*
+import kotlinx.android.synthetic.main.fragment_home.view.*
 import okhttp3.*
 import org.json.JSONArray
 import org.json.JSONObject
@@ -31,11 +32,8 @@ import kotlin.collections.ArrayList
 class StatisticActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    //private lateinit var caseList: ArrayList<String>
 
     private var arrayList_details: ArrayList<DailyCase> = ArrayList()
-
-    private lateinit var mainHandler: Handler
 
     val client = OkHttpClient()
 
