@@ -58,6 +58,24 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, dbname, factory, ve
         return true
     }
 
+    fun getUserName(id: String): String {
+        var name = ""
+        val db = writableDatabase
+        val query = "select * from users where id = \"$id\";"
+        val cursor = db.rawQuery(query, null)
+        if (cursor.count <= 0) {
+            cursor.close()
+            return "Wrong User"
+        }
+        else {
+            while (cursor.moveToNext()) {
+                name = cursor.getString(3)
+            }
+        }
+        cursor.close()
+        return name
+    }
+
 
     // Reminder
     fun insertReminderData(reminder: Reminder) {
@@ -74,9 +92,9 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, dbname, factory, ve
     }
 
     fun getReminderData(phoneNo: String): Reminder {
-        val r = Reminder(phoneNo, 0, 0, 0)
+        var r = Reminder(phoneNo, 0, 0, 0)
         val db = writableDatabase
-        val query = "select * from users where phoneNo = \"$phoneNo\";"
+        val query = "select * from reminders where phoneNo = \"$phoneNo\";"
         val cursor = db.rawQuery(query, null)
         if (cursor.count <= 0) {
             cursor.close()

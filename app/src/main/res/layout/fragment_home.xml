@@ -379,7 +379,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Location - China (Mainland)"
+            android:text="Location - United Kingdom"
             android:textAllCaps="false"
             android:textColor="@color/text_5" />
 
@@ -405,41 +405,41 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView17"
+            android:id="@+id/casesHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="75dp"
-            android:text="96,432"
+            android:text="11891292"
             android:textColor="@color/text_4"
             android:textSize="25sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView18"
+            android:id="@+id/deathsHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="170dp"
             android:layout_marginTop="75dp"
-            android:text="4,636"
+            android:text="147857"
             android:textColor="@color/text_4"
             android:textSize="25sp"
             android:textStyle="bold" />
 
         <ImageView
-            android:id="@+id/imageView8"
+            android:id="@+id/casesHomeIcon"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="90dp"
+            android:layout_marginLeft="120dp"
             android:layout_marginTop="82dp"
             android:src="@mipmap/shangsheng" />
 
         <ImageView
-            android:id="@+id/imageView9"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="240dp"
-            android:layout_marginTop="72dp"
-            android:src="@mipmap/icdash" />
+            android:id="@+id/deathsHomeIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="260dp"
+            android:layout_marginTop="82dp"
+            android:src="@mipmap/shangsheng" />
 
         <View
             android:id="@+id/divider"

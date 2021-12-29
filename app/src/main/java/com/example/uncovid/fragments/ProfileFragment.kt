@@ -56,6 +56,7 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         logoutBtn.setOnClickListener {
+            // TODO: Need to implement real logout
             val intent = Intent (activity, LoginActivity::class.java)
             activity?.startActivity(intent)
         }
