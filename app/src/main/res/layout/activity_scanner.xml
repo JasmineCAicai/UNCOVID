@@ -2,35 +2,40 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/test"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ScannerActivity">
-    
-    <com.budiyev.android.codescanner.CodeScannerView
-        android:id="@+id/scannerView"
+
+    <FrameLayout
+        android:id="@+id/containerScanner"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:autoFocusButtonVisible="false"
-        app:flashButtonColor="@android:color/white"
-        app:flashButtonVisible="true"
-        app:frameColor="@android:color/white"
-        app:frameCornersSize="50dp"
-        app:frameCornersRadius="0dp"
-        app:frameAspectRatioWidth="1"
-        app:frameAspectRatioHeight="1"
-        app:frameSize="0.75"
-        app:frameThickness="2dp"
-        app:maskColor="#77000000"/>
-
-    <ImageButton
-        android:id="@+id/scannerBack1Btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:backgroundTint="#00FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/back_1" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/flashToggle"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/selector_flash_on_off" />
+
+        <ImageButton
+            android:id="@+id/scannerBack1Btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="134dp"
+            android:layout_marginBottom="25dp"
+            android:backgroundTint="#00FFFFFF"
+            app:srcCompat="@mipmap/back_1" />
+
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

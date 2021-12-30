@@ -7,17 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.lifecycle.ViewModelProvider
 import com.example.uncovid.*
-import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.fragment_home.*
-import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.Observer
 import com.example.uncovid.DB.DBHelper
-import com.example.uncovid.entity.Cases
 import com.example.uncovid.lifecycle.ResourceHandler
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_statistic.*
 import okhttp3.*
 import org.json.JSONArray
 import org.json.JSONObject
