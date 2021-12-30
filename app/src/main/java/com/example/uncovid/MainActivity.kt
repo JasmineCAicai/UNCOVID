@@ -2,6 +2,7 @@ package com.example.uncovid
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.uncovid.databinding.ActivityMainBinding

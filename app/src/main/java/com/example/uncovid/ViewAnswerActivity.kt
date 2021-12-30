@@ -7,8 +7,8 @@ import kotlinx.android.synthetic.main.activity_view_answer.*
 
 import android.util.Log
 import com.example.uncovid.entity.Answer
-import com.google.firebase.crashlytics.buildtools.reloc.com.google.common.reflect.TypeToken
 import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
 class ViewAnswerActivity : AppCompatActivity() {
 

@@ -3,9 +3,6 @@ package com.example.uncovid
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.CompoundButton
-import android.widget.RadioButton
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import com.example.uncovid.DB.DBHelper
