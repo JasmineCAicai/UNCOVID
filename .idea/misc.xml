@@ -12,6 +12,8 @@
         <entry key="..\:/SWE401/UNCOVID/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.23022222222222222" />
         <entry key="..\:/SWE401/UNCOVID/app/src/main/res/drawable/ic_baseline_arrow_forward_ios_24.xml" value="0.23022222222222222" />
         <entry key="..\:/SWE401/UNCOVID/app/src/main/res/drawable/ic_baseline_qr_code_scanner_24.xml" value="0.23022222222222222" />
+        <entry key="..\:/SWE401/UNCOVID/app/src/main/res/drawable/ic_flash_off.xml" value="0.12612612612612611" />
+        <entry key="..\:/SWE401/UNCOVID/app/src/main/res/drawable/ic_flash_on.xml" value="0.12612612612612611" />
         <entry key="..\:/SWE401/UNCOVID/app/src/main/res/drawable/ic_home_colored.xml" value="0.19444444444444445" />
         <entry key="..\:/SWE401/UNCOVID/app/src/main/res/drawable/ic_home_stroke.xml" value="0.26979166666666665" />
         <entry key="..\:/SWE401/UNCOVID/app/src/main/res/drawable/ic_launcher_background.xml" value="0.19444444444444445" />
@@ -20,20 +22,22 @@
         <entry key="..\:/SWE401/UNCOVID/app/src/main/res/drawable/ic_question_answer_colored.xml" value="0.26979166666666665" />
         <entry key="..\:/SWE401/UNCOVID/app/src/main/res/drawable/ic_question_answer_stroke.xml" value="0.26979166666666665" />
         <entry key="..\:/SWE401/UNCOVID/app/src/main/res/drawable/location_detail_background.xml" value="0.19444444444444445" />
+        <entry key="..\:/SWE401/UNCOVID/app/src/main/res/drawable/location_detail_bg_r.xml" value="0.12962962962962962" />
         <entry key="..\:/SWE401/UNCOVID/app/src/main/res/drawable/location_list_bg.xml" value="0.23022222222222222" />
         <entry key="..\:/SWE401/UNCOVID/app/src/main/res/drawable/profile_background.xml" value="0.15833333333333333" />
         <entry key="..\:/SWE401/UNCOVID/app/src/main/res/drawable/question_item_card.xml" value="0.26979166666666665" />
         <entry key="..\:/SWE401/UNCOVID/app/src/main/res/drawable/question_list_card.xml" value="0.26979166666666665" />
         <entry key="..\:/SWE401/UNCOVID/app/src/main/res/drawable/searchbox.xml" value="0.26979166666666665" />
+        <entry key="..\:/SWE401/UNCOVID/app/src/main/res/drawable/selector_flash_on_off.xml" value="0.12612612612612611" />
         <entry key="..\:/SWE401/UNCOVID/app/src/main/res/layout/activity_add_answer.xml" value="0.1793478260869565" />
         <entry key="..\:/SWE401/UNCOVID/app/src/main/res/layout/activity_intro.xml" value="0.1793478260869565" />
-        <entry key="..\:/SWE401/UNCOVID/app/src/main/res/layout/activity_location_detail.xml" value="0.176" />
+        <entry key="..\:/SWE401/UNCOVID/app/src/main/res/layout/activity_location_detail.xml" value="0.264" />
         <entry key="..\:/SWE401/UNCOVID/app/src/main/res/layout/activity_location_list.xml" value="0.2" />
         <entry key="..\:/SWE401/UNCOVID/app/src/main/res/layout/activity_login.xml" value="0.152" />
         <entry key="..\:/SWE401/UNCOVID/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
         <entry key="..\:/SWE401/UNCOVID/app/src/main/res/layout/activity_reminder.xml" value="0.136" />
         <entry key="..\:/SWE401/UNCOVID/app/src/main/res/layout/activity_reminder_detail.xml" value="0.15307971014492755" />
-        <entry key="..\:/SWE401/UNCOVID/app/src/main/res/layout/activity_scanner.xml" value="0.1598731884057971" />
+        <entry key="..\:/SWE401/UNCOVID/app/src/main/res/layout/activity_scanner.xml" value="0.152" />
         <entry key="..\:/SWE401/UNCOVID/app/src/main/res/layout/activity_signup.xml" value="0.152" />
         <entry key="..\:/SWE401/UNCOVID/app/src/main/res/layout/activity_view_answer.xml" value="0.1598731884057971" />
         <entry key="..\:/SWE401/UNCOVID/app/src/main/res/layout/calendar_cell.xml" value="0.11216216216216217" />
@@ -42,8 +46,10 @@
         <entry key="..\:/SWE401/UNCOVID/app/src/main/res/layout/fragment_asks.xml" value="0.1793478260869565" />
         <entry key="..\:/SWE401/UNCOVID/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/SWE401/UNCOVID/app/src/main/res/layout/fragment_profile.xml" value="0.176" />
+        <entry key="..\:/SWE401/UNCOVID/app/src/main/res/layout/layout_qr_result_show.xml" value="0.11527777777777778" />
         <entry key="..\:/SWE401/UNCOVID/app/src/main/res/layout/location_list_layout.xml" value="0.10270270270270271" />
         <entry key="..\:/SWE401/UNCOVID/app/src/main/res/layout/question_card_layout.xml" value="0.1793478260869565" />
+        <entry key="..\:/SWE401/UNCOVID/app/src/main/res/layout/test.xml" value="0.11527777777777778" />
         <entry key="app/src/main/res/drawable/answer_input_box.xml" value="0.15900900900900902" />
         <entry key="app/src/main/res/drawable/color_selector.xml" value="0.15900900900900902" />
         <entry key="app/src/main/res/drawable/home_selector.xml" value="0.17962962962962964" />
@@ -65,11 +71,10 @@
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_statistic.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_view_answer.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/custom_location_card.xml" value="0.16531531531531532" />
         <entry key="app/src/main/res/layout/fragment_asks.xml" value="0.2111111111111111" />
         <entry key="app/src/main/res/layout/fragment_history.xml" value="0.14504504504504503" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.29554655870445345" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.33408713394765793" />
         <entry key="app/src/main/res/layout/fragment_reminder.xml" value="0.335" />
         <entry key="app/src/main/res/layout/main_fragment.xml" value="0.1472972972972973" />
         <entry key="app/src/main/res/layout/question_card_layout.xml" value="0.21673003802281368" />

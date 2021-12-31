@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.LinearSnapHelper
 import com.example.uncovid.DB.CDBHelper
 import com.example.uncovid.DB.QrResultDataBase
 import com.example.uncovid.entity.DBHelperI
-import com.example.uncovid.entity.QrResult
 import kotlinx.android.synthetic.main.activity_location_list.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_reminder.*
@@ -76,6 +75,9 @@ class LocationListActivity : AppCompatActivity() {
 
     private fun setUpCalendar(changeMonth: Calendar? = null) {
         // first part
+
+        var id = this.intent.getStringExtra("id")
+
         txt_current_month!!.text = sdf.format(cal.time)
         val monthCalendar = cal.clone() as Calendar
 
@@ -108,6 +110,18 @@ class LocationListActivity : AppCompatActivity() {
         dates.clear()
         monthCalendar.set(Calendar.DAY_OF_MONTH, 1)
 
+        var Sposition = dbHelperI.getAllQRResult(id)
+        var Stime = dbHelperI.getAllQRTime(id)
+
+        val locationLayoutManager = LinearLayoutManager(this@LocationListActivity)
+        location_recycler_view!!.layoutManager = locationLayoutManager
+
+//                val locationAdapter = LocationListAdapter(this@LocationListActivity, location, time)
+//                location_recycler_view!!.adapter = locationAdapter
+
+        val locationAdapter = LocationListAdapter(this@LocationListActivity, Sposition,Stime)
+        location_recycler_view!!.adapter = locationAdapter
+
         while (dates.size < maxDaysInMonth) {
             if (monthCalendar[Calendar.DAY_OF_MONTH] == selectedDay)
                 currentPosition = dates.size
@@ -134,6 +148,7 @@ class LocationListActivity : AppCompatActivity() {
                 var Stime = arrayOf<String>()
                 val clickCalendar = Calendar.getInstance()
                 clickCalendar.time = dates[position]
+                Log.d("msg", dates[position].toString())
                 selectedDay = clickCalendar[Calendar.DAY_OF_MONTH]
 //                if(position == 14){
 //                    location = arrayOf("Petronas Twin Towers", "Marini’s on 57", "Aquaria KLCC", "Grand Hyatt Kuala Lumpur")
@@ -141,8 +156,12 @@ class LocationListActivity : AppCompatActivity() {
 //                }
 
                 if(position == 30){
-                    Sposition = dbHelperI.getAllQRResult()
-                    Stime = dbHelperI.getAllQRTime()
+                    Sposition = dbHelperI.getAllQRResult(id)
+                    Stime = dbHelperI.getAllQRTime(id)
+                }
+
+                for (item in Stime) {
+                    Log.d("msg2", item.toString())
                 }
 
                 val locationLayoutManager = LinearLayoutManager(this@LocationListActivity)
