@@ -51,6 +51,10 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.0'
 
+    implementation 'com.google.mlkit:barcode-scanning:17.0.1'
+    implementation 'com.google.android.gms:play-services-mlkit-barcode-scanning:17.0.0'
+    implementation 'androidx.room:room-common:2.2.6'
+
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
