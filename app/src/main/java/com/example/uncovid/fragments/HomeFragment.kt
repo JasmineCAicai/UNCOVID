@@ -131,20 +131,22 @@ class HomeFragment : Fragment() {
         }
         scannerHomeBtn.setOnClickListener {
             val intent = Intent (activity, ScannerActivity::class.java)
+            intent.putExtra("id", id)
             activity?.startActivity(intent)
         }
         historyHomeBtn.setOnClickListener {
             val intent = Intent (activity, LocationListActivity::class.java)
+            intent.putExtra("id",id)
             activity?.startActivity(intent)
         }
         statisticHomeBtn.setOnClickListener {
             val intent = Intent (activity, StatisticActivity::class.java)
             activity?.startActivity(intent)
         }
-        none.setOnClickListener {
-            val intent = Intent (activity, LocationDetailActivity::class.java)
-            activity?.startActivity(intent)
-        }
+//        none.setOnClickListener {
+//            val intent = Intent (activity, LocationDetailActivity::class.java)
+//            activity?.startActivity(intent)
+//        }
 
         homeCard1.setOnClickListener {
             val intent = Intent(activity, ReminderDetailActivity::class.java)

@@ -1,29 +1,18 @@
 package com.example.uncovid.entity
 
-import java.util.*
-
 interface DBHelperI {
-    fun insertQRResult(result: String): Int
+    fun insertQRResult(result: String, IDCard: String): Int
 
     fun getQRResult(id: Int): QrResult
 
     fun getTotal(result: String): Int
 
-    fun addToFavourite(id: Int): Int
+//    fun getAllQRScannedResult(): List<QrResult>
 
-    fun removeFromFavourite(id: Int): Int
+    fun getAllQRResult(IDCard: String?): Array<String>
 
-    fun deleteQrResult(id: Int): Int
+    fun getAllQRTime(IDCard: String?): Array<String>
 
-    fun getAllQRScannedResult(): List<QrResult>
+    fun getResult(id: Int): String
 
-    fun getAllQRResult(): Array<String>
-
-    fun getAllQRTime(): Array<String>
-
-    fun getAllFavouriteQRScannedResult(): List<QrResult>
-
-    fun deleteAllQRScannedResult()
-
-    fun deleteAllFavouriteQRScannedResult()
 }

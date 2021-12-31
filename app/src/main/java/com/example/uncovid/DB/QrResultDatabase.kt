@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.example.uncovid.Dao.QrResultDao
 import com.example.uncovid.entity.QrResult
 
-@Database(entities = [QrResult::class], version = 4,exportSchema = false)
+@Database(entities = [QrResult::class], version = 6,exportSchema = false)
 abstract class QrResultDataBase : RoomDatabase() {
     abstract fun getQrDao(): QrResultDao
 

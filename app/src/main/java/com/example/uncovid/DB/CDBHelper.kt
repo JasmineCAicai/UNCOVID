@@ -7,10 +7,10 @@ import java.util.*
 
 class CDBHelper(var qrResultDataBase: QrResultDataBase) : DBHelperI {
 
-    override fun insertQRResult(result: String): Int {
+    override fun insertQRResult(result: String, IDCard: String): Int {
         val time = Calendar.getInstance().toFormattedDisplay()
         val resultType = findResultType(result)
-        val qrResult = QrResult(result = result, resultType = resultType, calendar = time)
+        val qrResult = QrResult(result = result, resultType = resultType, IDCard = IDCard, calendar = time)
         return qrResultDataBase.getQrDao().insertQrResult(qrResult).toInt()
     }
 
@@ -22,38 +22,18 @@ class CDBHelper(var qrResultDataBase: QrResultDataBase) : DBHelperI {
         return qrResultDataBase.getQrDao().getTotal(result)
     }
 
-    override fun addToFavourite(id: Int): Int {
-        return qrResultDataBase.getQrDao().addToFavourite(id)
+//    override fun getAllQRScannedResult(): List<QrResult> {
+//        return qrResultDataBase.getQrDao().getAllScannedResult()
+//    }
+    override fun getAllQRResult(IDCard: String?): Array<String> {
+        return qrResultDataBase.getQrDao().getAllQRResult(IDCard)
+    }
+    override fun getAllQRTime(IDCard: String?): Array<String> {
+        return qrResultDataBase.getQrDao().getAllQRTime(IDCard)
     }
 
-    override fun removeFromFavourite(id: Int): Int {
-        return qrResultDataBase.getQrDao().removeFromFavourite(id)
-    }
-
-    override fun deleteQrResult(id: Int): Int {
-        return qrResultDataBase.getQrDao().deleteQrResult(id)
-    }
-
-    override fun getAllQRScannedResult(): List<QrResult> {
-        return qrResultDataBase.getQrDao().getAllScannedResult()
-    }
-    override fun getAllQRResult(): Array<String> {
-        return qrResultDataBase.getQrDao().getAllQRResult()
-    }
-    override fun getAllQRTime(): Array<String> {
-        return qrResultDataBase.getQrDao().getAllQRTime()
-    }
-
-    override fun getAllFavouriteQRScannedResult(): List<QrResult> {
-        return qrResultDataBase.getQrDao().getAllFavouriteResult()
-    }
-
-    override fun deleteAllQRScannedResult() {
-        qrResultDataBase.getQrDao().deleteAllScannedResult()
-    }
-
-    override fun deleteAllFavouriteQRScannedResult() {
-        qrResultDataBase.getQrDao().deleteAllFavouriteResult()
+    override fun getResult(id: Int): String {
+        return qrResultDataBase.getQrDao().getResult(id)
     }
 
     /*
@@ -62,7 +42,5 @@ class CDBHelper(var qrResultDataBase: QrResultDataBase) : DBHelperI {
     private fun findResultType(result: String): String {
         return "TEXT"
     }
-
-
 
 }

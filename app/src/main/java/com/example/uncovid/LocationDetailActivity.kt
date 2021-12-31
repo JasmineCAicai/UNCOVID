@@ -30,6 +30,12 @@ class LocationDetailActivity : AppCompatActivity() {
         tvPpl.text = numPpl.toString()
         tvLTime2.text = "Last updated: " + qrResult?.calendar
 
+        if(qrResult?.result == "Glasgow"){
+            imageStatus.setImageResource(R.mipmap.cancel)
+            imageView16.setImageResource(R.drawable.location_detail_bg_r)
+        }
+
+
         locationBack1Btn.setOnClickListener {
             finish()
         }

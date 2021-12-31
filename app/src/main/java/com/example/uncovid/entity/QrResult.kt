@@ -20,8 +20,8 @@ data class QrResult(
     @ColumnInfo(name = "result_type")
     val resultType: String,
 
-    @ColumnInfo(name = "favourite")
-    val favourite: Boolean = false,
+    @ColumnInfo(name = "IDCard")
+    val IDCard: String?,
 
     @ColumnInfo(name = "time")
     val calendar: String

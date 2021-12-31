@@ -32,7 +32,6 @@ class ScannerActivity : AppCompatActivity(), ZBarScannerView.ResultHandler{
 
 //    private lateinit var mView: View
     lateinit var scannerView: ZBarScannerView
-    lateinit var resultDialog: QrCodeResultDialog
     private lateinit var dbHelperI: DBHelperI
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,8 +43,9 @@ class ScannerActivity : AppCompatActivity(), ZBarScannerView.ResultHandler{
         initViews()
         setContentView(scannerView)
 
-        var qrResult = QrResult(result = "Text", resultType = "TEXT", favourite = false, calendar = Calendar.getInstance().toFormattedDisplay())
-        QrResultDataBase.getAppDatabase(this)?.getQrDao()?.insertQrResult(qrResult)
+
+//        var qrResult = QrResult(result = "Text", resultType = "TEXT", IDCard = "TEXT", calendar = Calendar.getInstance().toFormattedDisplay())
+//        QrResultDataBase.getAppDatabase(this)?.getQrDao()?.insertQrResult(qrResult)
 
 
 //        scannerBack1Btn.setOnClickListener {
@@ -60,16 +60,6 @@ class ScannerActivity : AppCompatActivity(), ZBarScannerView.ResultHandler{
 
     private fun init() {
         dbHelperI = CDBHelper(QrResultDataBase.getAppDatabase(this!!)!!)
-    }
-
-
-    private fun setResultDialog() {
-        resultDialog = QrCodeResultDialog(this!!)
-//        resultDialog.setOnDismissListener(object : QrCodeResultDialog.OnDismissListener {
-//            override fun onDismiss() {
-//                resetPreview()
-//            }
-//        })
     }
 
     private fun checkForPermission() {
@@ -191,7 +181,8 @@ class ScannerActivity : AppCompatActivity(), ZBarScannerView.ResultHandler{
     }
 
     private fun saveToDataBase(contents: String) {
-        val insertedResultId = dbHelperI.insertQRResult(contents)
+        var id = this.intent.getStringExtra("id")
+        val insertedResultId = id?.let { dbHelperI.insertQRResult(contents, it)}
 //        val qrResult = dbHelperI.getQRResult(insertedResultId)
         val intent = Intent(this, LocationDetailActivity::class.java)
         intent.putExtra("QRid",insertedResultId)
