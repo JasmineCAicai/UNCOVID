@@ -64,10 +64,10 @@ class ProfileFragment : Fragment() {
 
         var id = activity?.intent?.getStringExtra("id")
         var name = dbHelper.getUserName(id!!)
-        var phone = dbHelper.getUserPhoneNo(id!!)
+        var idCardNo = dbHelper.getUserIDCard(id!!)
         profileName.text = name
-        profilePhone.text = phone[0] + "" + phone[1] + "******" + phone[phone.length-1]
-        profileID.text = id[0] + "" + id[1] + "******" + id[id.length-1]
+        profilePhone.text = id[0] + "" + id[1] + "******" + id[id.length-1]
+        profileID.text = idCardNo[0] + "" + idCardNo[1] + "******" + idCardNo[idCardNo.length-1]
 
         logoutBtn.setOnClickListener {
             // TODO: Need to implement real logout
