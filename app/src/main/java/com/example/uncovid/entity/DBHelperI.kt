@@ -16,7 +16,9 @@ interface DBHelperI {
     fun deleteQrResult(id: Int): Int
 
     fun getAllQRScannedResult(): List<QrResult>
+
     fun getAllQRResult(): Array<String>
+
     fun getAllQRTime(): Array<String>
 
     fun getAllFavouriteQRScannedResult(): List<QrResult>

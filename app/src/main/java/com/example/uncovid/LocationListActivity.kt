@@ -134,6 +134,7 @@ class LocationListActivity : AppCompatActivity() {
                 var Stime = arrayOf<String>()
                 val clickCalendar = Calendar.getInstance()
                 clickCalendar.time = dates[position]
+                Log.d("msg", dates[position].toString())
                 selectedDay = clickCalendar[Calendar.DAY_OF_MONTH]
 //                if(position == 14){
 //                    location = arrayOf("Petronas Twin Towers", "Marini’s on 57", "Aquaria KLCC", "Grand Hyatt Kuala Lumpur")
@@ -143,6 +144,10 @@ class LocationListActivity : AppCompatActivity() {
                 if(position == 30){
                     Sposition = dbHelperI.getAllQRResult()
                     Stime = dbHelperI.getAllQRTime()
+                }
+
+                for (item in Stime) {
+                    Log.d("msg2", item.toString())
                 }
 
                 val locationLayoutManager = LinearLayoutManager(this@LocationListActivity)

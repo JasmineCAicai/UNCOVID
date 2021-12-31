@@ -38,7 +38,7 @@ class CDBHelper(var qrResultDataBase: QrResultDataBase) : DBHelperI {
         return qrResultDataBase.getQrDao().getAllScannedResult()
     }
     override fun getAllQRResult(): Array<String> {
-        return qrResultDataBase.getQrDao().getAllResult()
+        return qrResultDataBase.getQrDao().getAllQRResult()
     }
     override fun getAllQRTime(): Array<String> {
         return qrResultDataBase.getQrDao().getAllQRTime()

@@ -13,10 +13,10 @@ interface QrResultDao {
     @Query("SELECT * FROM QrResult ORDER BY time DESC")
     fun getAllScannedResult(): List<QrResult>
 
-    @Query("SELECT result FROM QrResult ORDER BY time DESC")
-    fun getAllResult(): Array<String>
+    @Query("SELECT result FROM QrResult WHERE result <> 'Text' ORDER BY time DESC")
+    fun getAllQRResult(): Array<String>
 
-    @Query("SELECT time FROM QrResult ORDER BY time DESC")
+    @Query("SELECT time FROM QrResult WHERE result <> 'Text' ORDER BY time DESC")
     fun getAllQRTime(): Array<String>
 
     @Query("SELECT * FROM QrResult WHERE favourite = 1 ORDER BY time DESC")
