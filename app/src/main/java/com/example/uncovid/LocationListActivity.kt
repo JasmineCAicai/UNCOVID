@@ -3,8 +3,13 @@ package com.example.uncovid
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
+import com.example.uncovid.DB.CDBHelper
+import com.example.uncovid.DB.QrResultDataBase
+import com.example.uncovid.entity.DBHelperI
+import com.example.uncovid.entity.QrResult
 import kotlinx.android.synthetic.main.activity_location_list.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_reminder.*
@@ -30,9 +35,14 @@ class LocationListActivity : AppCompatActivity() {
 
     private val dates = ArrayList<Date>()
 
+    private lateinit var dbHelperI: DBHelperI
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_location_list)
+
+        dbHelperI = CDBHelper(QrResultDataBase.getAppDatabase(this!!)!!)
+
 
         backLocationBtn.setOnClickListener {
             finish()
@@ -118,18 +128,30 @@ class LocationListActivity : AppCompatActivity() {
 
         calendarAdapter.setOnItemClickListener(object : CalendarAdapter.OnItemClickListener {
             override fun onItemClick(position: Int) {
-                var location = arrayOf<String>()
-                var time = arrayOf<String>()
+//                var location = arrayOf<String>()
+//                var time = arrayOf<String>()
+                var Sposition = arrayOf<String>()
+                var Stime = arrayOf<String>()
                 val clickCalendar = Calendar.getInstance()
                 clickCalendar.time = dates[position]
                 selectedDay = clickCalendar[Calendar.DAY_OF_MONTH]
-                if(position == 14){
-                    location = arrayOf("Petronas Twin Towers", "Marini’s on 57", "Aquaria KLCC", "Grand Hyatt Kuala Lumpur")
-                    time = arrayOf("11:17 AM", "1:34 PM", "2:55 PM", "8:18 PM")
+//                if(position == 14){
+//                    location = arrayOf("Petronas Twin Towers", "Marini’s on 57", "Aquaria KLCC", "Grand Hyatt Kuala Lumpur")
+//                    time = arrayOf("11:17 AM", "1:34 PM", "2:55 PM", "8:18 PM")
+//                }
+
+                if(position == 30){
+                    Sposition = dbHelperI.getAllQRResult()
+                    Stime = dbHelperI.getAllQRTime()
                 }
+
                 val locationLayoutManager = LinearLayoutManager(this@LocationListActivity)
                 location_recycler_view!!.layoutManager = locationLayoutManager
-                val locationAdapter = LocationListAdapter(this@LocationListActivity, location, time)
+
+//                val locationAdapter = LocationListAdapter(this@LocationListActivity, location, time)
+//                location_recycler_view!!.adapter = locationAdapter
+
+                val locationAdapter = LocationListAdapter(this@LocationListActivity, Sposition,Stime)
                 location_recycler_view!!.adapter = locationAdapter
             }
         })

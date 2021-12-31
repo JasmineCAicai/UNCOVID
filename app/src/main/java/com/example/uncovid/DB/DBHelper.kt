@@ -61,7 +61,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, dbname, factory, ve
     fun getUserName(id: String): String {
         var name = ""
         val db = writableDatabase
-        val query = "select * from users where id = \"$id\";"
+        val query = "select * from users where phoneNo = \"$id\";"
         val cursor = db.rawQuery(query, null)
         if (cursor.count <= 0) {
             cursor.close()
@@ -74,6 +74,24 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, dbname, factory, ve
         }
         cursor.close()
         return name
+    }
+
+    fun getUserPhoneNo(id: String): String {
+        var phoneNo = ""
+        val db = writableDatabase
+        val query = "select * from users where phoneNo = \"$id\";"
+        val cursor = db.rawQuery(query, null)
+        if (cursor.count <= 0) {
+            cursor.close()
+            return "Wrong Phone Number"
+        }
+        else {
+            while (cursor.moveToNext()) {
+                phoneNo = cursor.getString(0)
+            }
+        }
+        cursor.close()
+        return phoneNo
     }
 
 

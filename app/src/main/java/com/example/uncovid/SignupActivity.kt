@@ -48,8 +48,20 @@ class SignupActivity : AppCompatActivity() {
             return false
         }
 
+        if (id!!.length != 8) {
+            idNumber.error = "ID card number is in wrong format!"
+            idNumber.requestFocus()
+            return false
+        }
+
         if (phoneNo!!.isEmpty()) {
             phoneNum_2.error = "Phone number required!"
+            phoneNum_2.requestFocus()
+            return false
+        }
+
+        if (phoneNo!!.length != 11) {
+            phoneNum_2.error = "Phone number is in wrong format!"
             phoneNum_2.requestFocus()
             return false
         }
@@ -62,6 +74,12 @@ class SignupActivity : AppCompatActivity() {
 
         if (pwd!!.isEmpty()) {
             password_2.error = "Password required!"
+            password_2.requestFocus()
+            return false
+        }
+
+        if (pwd!!.length < 6) {
+            password_2.error = "Password length should more than 5!"
             password_2.requestFocus()
             return false
         }

@@ -28,10 +28,10 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
-            app:srcCompat="@mipmap/account" />
+            app:srcCompat="@mipmap/touxiang2" />
 
         <TextView
-            android:id="@+id/tvName"
+            android:id="@+id/profileName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imageView19"
@@ -44,7 +44,7 @@
             android:id="@+id/textView29"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvName"
+            android:layout_below="@+id/profileName"
             android:layout_alignParentStart="true"
             android:layout_marginStart="40dp"
             android:layout_marginTop="30dp"
@@ -68,7 +68,7 @@
             android:layout_alignBottom="@id/textView29"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="40dp"
-            android:text="Penan"
+            android:text="London"
             android:textColor="@color/text_1"
             android:textSize="14sp" />
 
@@ -94,7 +94,7 @@
             android:background="@color/background_1" />
 
         <TextView
-            android:id="@+id/tvID"
+            android:id="@+id/profileID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@id/textView30"
@@ -126,7 +126,7 @@
             android:background="@color/background_1" />
 
         <TextView
-            android:id="@+id/tvPhone"
+            android:id="@+id/profilePhone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@id/textView31"
@@ -163,7 +163,7 @@
             android:layout_below="@+id/imageView20"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
-            android:text="2021-10-16 17:12:16" />
+            android:text="2021-12-30 17:12:16" />
 
         <ImageView
             android:id="@+id/logoutBtn"

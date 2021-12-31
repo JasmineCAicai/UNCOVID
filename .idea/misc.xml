@@ -65,10 +65,11 @@
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_statistic.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_view_answer.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/custom_location_card.xml" value="0.16531531531531532" />
         <entry key="app/src/main/res/layout/fragment_asks.xml" value="0.2111111111111111" />
         <entry key="app/src/main/res/layout/fragment_history.xml" value="0.14504504504504503" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.33408713394765793" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.29554655870445345" />
         <entry key="app/src/main/res/layout/fragment_reminder.xml" value="0.335" />
         <entry key="app/src/main/res/layout/main_fragment.xml" value="0.1472972972972973" />
         <entry key="app/src/main/res/layout/question_card_layout.xml" value="0.21673003802281368" />
