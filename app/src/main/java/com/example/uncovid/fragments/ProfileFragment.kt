@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.example.uncovid.DB.DBHelper
 import com.example.uncovid.LoginActivity
 import com.example.uncovid.R
 import com.example.uncovid.ReminderActivity
@@ -25,6 +26,8 @@ private const val ARG_PARAM2 = "param2"
 
 class ProfileFragment : Fragment() {
 
+    lateinit var dbHelper: DBHelper
+
     private val sharedViewModel: SharedViewModel by activityViewModels()
 
     // TODO: Rename and change types of parameters
@@ -39,9 +42,11 @@ class ProfileFragment : Fragment() {
         }
 
         val idObserver = Observer<String>{ id ->
-            tvName.text = id
+            profileName.text = id
         }
         sharedViewModel.currentID.observe(this, idObserver)
+
+
     }
 
     override fun onCreateView(
@@ -55,9 +60,19 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        dbHelper = DBHelper(requireContext())
+
+        var id = activity?.intent?.getStringExtra("id")
+        var name = dbHelper.getUserName(id!!)
+        var phone = dbHelper.getUserPhoneNo(id!!)
+        profileName.text = name
+        profilePhone.text = phone[0] + "" + phone[1] + "******" + phone[phone.length-1]
+        profileID.text = id[0] + "" + id[1] + "******" + id[id.length-1]
+
         logoutBtn.setOnClickListener {
             // TODO: Need to implement real logout
             val intent = Intent (activity, LoginActivity::class.java)
+            intent.putExtra("id", "0")
             activity?.startActivity(intent)
         }
     }

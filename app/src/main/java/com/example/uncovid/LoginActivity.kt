@@ -24,6 +24,13 @@ class LoginActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this).get(SharedViewModel::class.java)
 
+        var id = this.intent.getStringExtra("id")
+        if (id == "0" && moveTaskToBack(true)) {
+            //Toast.makeText(this, "Please login first!", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+
         tbtnLogin.setOnClickListener{
             val intent = Intent(this, SignupActivity::class.java)
             startActivity(intent)

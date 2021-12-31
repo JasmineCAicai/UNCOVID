@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.fragment_home.*
 import com.example.uncovid.DB.DBHelper
 import com.example.uncovid.lifecycle.ResourceHandler
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_profile.*
 import okhttp3.*
 import org.json.JSONArray
 import org.json.JSONObject
